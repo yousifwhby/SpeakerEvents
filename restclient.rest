@@ -1,0 +1,34 @@
+GET http://localhost:6565/students
+
+###
+POSt http://localhost:6565/students
+Content-Type: application/json
+
+{   
+    "id":7,
+    "Email":"okay",
+    "Password":"asdfsadf"
+
+}
+###
+GEt http://localhost:6565/students/5
+Content-Type: application/json
+
+{   
+    "id":5
+    
+
+}
+###
+GET http://localhost:6565/students
+
+###
+POSt http://localhost:6565/students
+Content-Type: application/json
+
+{   
+    "id":7,
+    "Email":"okay",
+    "Password":"asdfsadf"
+
+}

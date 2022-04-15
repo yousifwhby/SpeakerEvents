@@ -5,6 +5,8 @@ const path = require("path");
 const mongoose =require('mongoose');
 const studentRouter=require('./Routers/studentRouter');
 const eventRouter=require('./Routers/eventRouter');
+const authRouter=require('./Routers/authRouter');
+const authanticationMW=require("./MiddleWare/authMiddleWare");
 
 const server = express();
 
@@ -24,10 +26,7 @@ server.use((request,response,next)=>{
 });
 
 
-//home page
-// server.get("/",(request,response)=>{
-//     response.render('');
-// })
+
 
 //midlleware
 server.use(bodyparser.json());
@@ -35,6 +34,8 @@ server.use(bodyparser.urlencoded({extended:true}));
 
 
 //router
+server.use(authRouter);
+server.use(authanticationMW);
 server.use(studentRouter);
 server.use(eventRouter);
 

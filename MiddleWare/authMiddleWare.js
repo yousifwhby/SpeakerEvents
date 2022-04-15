@@ -5,12 +5,14 @@ module.exports=(request,response,next)=>{
     try{
 
         token=request.get("Authorization").split(" ")[1];
-        decodedtoken=jwt.verify(token,"");
+        decodedtoken=jwt.verify(token,"hellototheworld");
         console.log(decodedtoken);
     }
     catch(error)
     {
         next(new Error("Not Authorization"))
     }
+    //Authantication
+    request.role=decodedtoken.role;
 
 }

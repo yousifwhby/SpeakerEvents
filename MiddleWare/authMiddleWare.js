@@ -10,7 +10,7 @@ module.exports=(request,response,next)=>{
     }
     catch(error)
     {
-        next(new Error("Not Authorization"))
+        next(new Error("Not Authenticated"))
     }
     //Authantication
     request.role=decodedtoken.role;
